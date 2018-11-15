@@ -1,0 +1,28 @@
+{
+  "name": "mongoose-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node",
+    "start": "nodemon --exec npm run babel-node -- app.js",
+    "refreshMongo": "babel-node ./tool/mongo-tool.js",
+    "test": "mocha --require babel-register --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.12"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.6",
+    "should": "^13.2.3",
+    "supertest": "^3.3.0"
+  }
+}
