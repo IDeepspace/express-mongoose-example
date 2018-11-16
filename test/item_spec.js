@@ -48,12 +48,11 @@ describe('ItemContronller', () => {
             .post('/items')
             .send(item)
             .expect(201)
-            // .expect((res) => {
-            //     Item.findOne(item, (err, doc) => {
-            //         console.log(doc)
-            //         res.body.uri.should.equal(`items/${doc._id}`)
-            //     })
-            // })
+            .expect((res) => {
+                Item.findOne(item, (err, doc) => {
+                    res.body.uri.should.equal(`items/${doc._id}`)
+                })
+            })
             .end(done)
     })
 

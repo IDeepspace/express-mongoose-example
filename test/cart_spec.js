@@ -56,11 +56,11 @@ describe('CartContronller', () => {
             .post('/carts')
             .send(cart)
             .expect(201)
-            // .expect((res) => {
-            //     Cart.findOne({ userId: '2' }, (err, doc) => {
-            //         res.body.uri.should.equal(`carts/${doc._id}`)
-            //     })
-            // })
+            .expect((res) => {
+                Cart.findOne({ userId: '2' }, (err, doc) => {
+                    res.body.uri.should.equal(`carts/${doc._id}`)
+                })
+            })
             .end(done)
     })
 

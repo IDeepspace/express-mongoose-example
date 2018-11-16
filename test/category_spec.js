@@ -41,11 +41,11 @@ describe('CategoryContronller', () => {
             .post('/categories')
             .send(category)
             .expect(201)
-            // .expect((res) => {
-            //     Category.findOne(category, (err, doc) => {
-            //         res.body.uri.should.equal(`categories/${doc._id}`)
-            //     })
-            // })
+            .expect((res) => {
+                Category.findOne(category, (err, doc) => {
+                    res.body.uri.should.equal(`categories/${doc._id}`)
+                })
+            })
             .end(done)
     })
 
